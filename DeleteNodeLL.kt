@@ -21,3 +21,22 @@ fun deleteNode(node:Node){
 
 
 }
+
+/** second solution */
+fun deleteNode2(node: ListNode?) {
+        if(node != null){
+        var current = node
+        var next = current.next
+        current.data = next.data
+        current.next = next.next
+        }
+    }
+
+/** third Solution */
+fun deleteNode3(node: ListNode?) {
+    
+        if(node == null) return
+        
+        node.data = node.next?.data ?: 0
+        node.next = node.next.next
+    }
